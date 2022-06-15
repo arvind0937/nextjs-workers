@@ -1,13 +1,14 @@
 import { useEffect, useRef, useCallback } from 'react';
 
-// import PiWorker from '../newWorker.worker';
+// import PiWorker from '../123123123123.myworker';
 
 export default function Index() {
   const workerRef = useRef();
   useEffect(() => {
     workerRef.current = new Worker(
-      new URL('../newWorker.worker.js', import.meta.url)
+      new URL('../123123123123.myworker.js', import.meta.url)
     );
+    // workerRef.current = PiWorker();
     workerRef.current.onmessage = (evt) =>
       alert(`WebWorker Response => ${evt.data}`);
     return () => {
